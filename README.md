@@ -327,62 +327,6 @@ $$
 ## Teste 2 e 3  Fim
 
 
-
-### 2. Modelo matemático --- Sair
-
-O ESP32 Slave utiliza a seguinte expressão para estimar a distância:
-
-\[
-d = 10^{\frac{RSSI_{1m}-RSSI}{10n}}
-\]
-
-**Parâmetros:**
-
-- **d:** distância estimada entre os dispositivos, em metros.
-- **RSSI₁ₘ:** intensidade de referência a 1 metro, igual a −59,3 dBm.
-- **RSSI:** intensidade do sinal medida pelo ESP32, em dBm.
-- **n:** expoente de propagação, configurado como 2,0 para o modelo ideal de espaço livre.
-
-### 3. Exemplo numérico resolvido --- Sair
-
-**Situação-problema:**
-
-Durante um experimento com a bancada didática, o ESP32 Slave registrou uma intensidade de sinal de −65 dBm.
-
-Determine a distância estimada entre os dois dispositivos.
-
-**Passo 1: identificar os dados**
-
-- RSSI de referência = −59,3 dBm
-- RSSI medido = −65 dBm
-- Expoente de propagação = 2,0
-
-**Passo 2: substituir na fórmula**
-
-\[
-d=10^{\frac{-59,3-(-65)}{10(2)}}
-\]
-
-**Passo 3: simplificar**
-
-\[
-d=10^{\frac{5,7}{20}}
-\]
-
-\[
-d=10^{0,285}
-\]
-
-**Passo 4: calcular a distância**
-
-\[
-\boxed{d \approx 1,93\text{ m}}
-\]
-
-**Resultado:** a distância estimada entre o ESP32 Slave e o ESP32 Master é de aproximadamente **1,93 metro**.
-
-Esse resultado depende das condições de propagação e dos parâmetros adotados no modelo.
-
 ### 4. Atividade proposta aos alunos
 
 **Situação experimental:**
@@ -458,7 +402,7 @@ Ao final da atividade, espera-se que os alunos consigam:
 
 
 
-## Teste 2 e 3  Inicio
+## Teste 2 e 3  Inicio  ---- 02
 ### 2. Modelo matemático
 
 O ESP32 Slave utiliza um modelo de propagação para estimar a distância entre os dispositivos a partir da intensidade do sinal recebido (RSSI).
@@ -517,5 +461,5 @@ $$
 **Observação:** o valor calculado representa uma estimativa matemática. A distância real pode ser diferente devido a interferências, obstáculos, reflexões e orientação das antenas.
 
 
-## Teste 2 e 3  Fim
+## Teste 2 e 3  Fim  --- 02
 
