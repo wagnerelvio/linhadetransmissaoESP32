@@ -396,6 +396,54 @@ $$
 
 Portanto, a diferença entre a distância real e a estimada foi de **0,43 metro**, equivalente a 43 centímetros.
 
+#### Aqui 02
+
+#### Cálculo do erro percentual
+
+O erro percentual permite avaliar a diferença entre a distância real e a distância estimada, expressa em porcentagem.
+
+$$
+E_p = \frac{E_a}{d_r} \times 100
+$$
+
+Em que:
+
+- **E_p:** erro percentual (%);
+- **E_a:** erro absoluto (m);
+- **d_r:** distância real (m).
+
+#### Exemplo numérico
+
+Considere uma distância real de **3,00 m** e uma distância estimada de **3,43 m**.
+
+O erro absoluto é:
+
+$$
+E_a = |3,00 - 3,43|
+$$
+
+$$
+E_a = 0,43 \ \mathrm{m}
+$$
+
+O erro percentual é:
+
+$$
+E_p = \frac{0,43}{3,00} \times 100
+$$
+
+Portanto:
+
+$$
+\boxed{E_p \approx 14,33\%}
+$$
+
+**Interpretação:** a distância estimada apresenta um erro absoluto de 0,43 metro e um erro percentual de aproximadamente 14,33% em relação à distância real.
+
+
+####  Aqui 04
+
+
 #### Cálculo do erro percentual
 
 O erro percentual permite avaliar o tamanho do erro em relação à distância real.
