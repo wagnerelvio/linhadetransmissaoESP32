@@ -374,6 +374,97 @@ $$
 E_{\%}=\frac{|d_{\text{real}}-d_{\text{estimada}}|}{d_{\text{real}}}\times100
 \]
 $$
+
+
+### 5. Atividade experimental com os ESP32
+
+Organize a bancada com os dois módulos ESP32 em um ambiente com visada direta.
+
+Posicione os dispositivos a distâncias conhecidas de 1, 3, 5 e 10 metros. Para cada distância, registre o RSSI medido e calcule a distância estimada utilizando o modelo de propagação.
+
+| Distância real (m) | RSSI (dBm) | Distância estimada (m) | Erro absoluto (m) |
+|---:|---|---|---|
+| 1 | A medir | A calcular | A calcular |
+| 3 | A medir | A calcular | A calcular |
+| 5 | A medir | A calcular | A calcular |
+| 10 | A medir | A calcular | A calcular |
+
+#### Cálculo do erro absoluto
+
+O erro absoluto corresponde à diferença, em módulo, entre a distância real medida e a distância estimada pelo ESP32.
+
+$$
+E_a = \left|d_{\text{real}} - d_{\text{estimada}}\right|
+$$
+
+Em que:
+
+- **Eₐ:** erro absoluto, em metros;
+- **d_real:** distância real entre os dispositivos, medida com uma trena;
+- **d_estimada:** distância calculada a partir do RSSI.
+
+#### Exemplo numérico
+
+Considere que os dispositivos estejam separados por uma distância real de **3 metros**, enquanto o modelo baseado no RSSI fornece uma distância estimada de **3,43 metros**.
+
+Substituindo os valores:
+
+$$
+E_a = |3,00 - 3,43|
+$$
+
+$$
+E_a = |-0,43|
+$$
+
+$$
+\boxed{E_a = 0,43\ \text{m}}
+$$
+
+Portanto, a diferença entre a distância real e a estimada foi de **0,43 metro**, equivalente a 43 centímetros.
+
+#### Cálculo do erro percentual
+
+O erro percentual permite avaliar o tamanho do erro em relação à distância real.
+
+$$
+E_{\%} = \frac{E_a}{d_{\text{real}}}\times100
+$$
+
+Substituindo os valores:
+
+$$
+E_{\%} = \frac{0,43}{3,00}\times100
+$$
+
+$$
+\boxed{E_{\%} \approx 14,33\%}
+$$
+
+**Interpretação:** neste exemplo, a estimativa apresentou um erro absoluto de 0,43 m e um erro percentual de aproximadamente 14,33% em relação à distância real.
+
+**Atividade complementar:** calcule os erros absoluto e percentual para todas as distâncias utilizadas no experimento. Em seguida, analise se os erros aumentam ou diminuem com o afastamento entre os dois ESP32.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 6. Questões discursivas
 
 **Questão 1.** Explique por que a intensidade do sinal recebido (RSSI) tende a diminuir à medida que a distância entre os módulos ESP32 aumenta.
