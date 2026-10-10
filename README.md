@@ -493,6 +493,4 @@ A página utiliza JavaScript e a API REST do ThingSpeak para consultar e apresen
 
 **Acesse o site do projeto:**
 
-[Site Oficial da Bancada Didática ESP32](https://sites.google.com/view/linhatransmissao04/início)
-
 [Site Oficial da Bancada Didática ESP32](https://sites.google.com/view/linhadetransmissao08)
