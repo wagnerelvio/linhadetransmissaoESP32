@@ -59,38 +59,34 @@ O Slave coleta as informações e as transmite ao Master por uma conexão TCP so
 
 ## Arquivos do projeto
 
-| Arquivo | Função |
-|---|---|
-| `slave006amqtt.ino` | Firmware do ESP32 transmissor: aquisição, RSSI, distância estimada, envio de dados, verificação de ACK e cálculo de RTT. |
-| `master006amqtt.ino` | Firmware do ESP32 receptor: ponto de acesso Wi-Fi, servidor TCP, confirmação de pacotes, registro serial e integração com ThingSpeak. |
+## Arquitetura do projeto
 
-> **Nota sobre o nome dos arquivos:** embora os nomes contenham `mqtt`, os códigos apresentados **não implementam MQTT**. A comunicação local é feita por TCP e a publicação no ThingSpeak por requisições HTTPS GET.
+![Arquitetura da bancada didática](Infra.png)
 
-## 1. Arquitetura do sistema
+A bancada utiliza dois módulos ESP32 com funções distintas:
 
-```text
-  Sensor DS18B20
-  (temperatura, GPIO 4)
-         |
-         v
-  +------------------+       Wi-Fi 2,4 GHz       +------------------+
-  | ESP32 Slave      | -- DATA,pacote,... ----> | ESP32 Master     |
-  | Transmissor      | <----- ACK,pacote ------- | Receptor / AP    |
-  | RSSI e distância | -- RTT,pacote,... ------> | Servidor TCP :80 |
-  +------------------+                          +------------------+
-                                                         |
-                                              Wi-Fi do roteador
-                                                         |
-                                                    HTTPS GET
-                                                         |
-                                                         v
-                                                  +-------------+
-                                                  | ThingSpeak  |
-                                                  | Dashboard   |
-                                                  +-------------+
-```
+- **ESP32 Slave:** transmissor dos dados;
+- **ESP32 Master:** receptor, ponto de acesso e gateway;
+- **DS18B20:** sensor responsável pela aquisição da temperatura;
+- **ThingSpeak:** plataforma utilizada para armazenamento e visualização dos dados;
+- **Página Web:** interface para apresentação dos gráficos e indicadores do enlace.
 
-O Master funciona em modo simultâneo **AP + STA** (`WIFI_AP_STA`): cria a rede local para o Slave e utiliza outra conexão Wi-Fi para acessar a Internet.
+O fluxo geral de funcionamento é:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 2. Código Slave: `slave006amqtt.ino`
 
