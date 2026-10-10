@@ -328,7 +328,7 @@ $$
 
 
 
-### 2. Modelo matemático
+### 2. Modelo matemático --- Sair
 
 O ESP32 Slave utiliza a seguinte expressão para estimar a distância:
 
@@ -343,7 +343,7 @@ d = 10^{\frac{RSSI_{1m}-RSSI}{10n}}
 - **RSSI:** intensidade do sinal medida pelo ESP32, em dBm.
 - **n:** expoente de propagação, configurado como 2,0 para o modelo ideal de espaço livre.
 
-### 3. Exemplo numérico resolvido
+### 3. Exemplo numérico resolvido --- Sair
 
 **Situação-problema:**
 
