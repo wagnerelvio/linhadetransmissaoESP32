@@ -264,8 +264,7 @@ Os códigos desenvolvidos para os microcontroladores ESP32 implementam uma arqui
 Compreender como a intensidade do sinal recebido (RSSI) pode ser utilizada para estimar a distância entre dois módulos ESP32 em um enlace Wi-Fi de 2,4 GHz.
 
 A atividade permite relacionar conceitos de propagação eletromagnética, atenuação do sinal e comunicação sem fio, utilizando os dados obtidos pela bancada didática.
-
-## Teste 2 e 3  Inicio
+ 
 ### 2. Modelo matemático
 
 O ESP32 Slave utiliza um modelo de propagação para estimar a distância entre os dispositivos a partir da intensidade do sinal recebido (RSSI).
@@ -323,10 +322,7 @@ $$
 
 **Observação:** o valor calculado representa uma estimativa matemática. A distância real pode ser diferente devido a interferências, obstáculos, reflexões e orientação das antenas.
 
-
-## Teste 2 e 3  Fim
-
-
+ 
 ### 4. Atividade proposta aos alunos
 
 **Situação experimental:**
