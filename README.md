@@ -347,34 +347,7 @@ Considerando os parâmetros RSSI₁ₘ = −59,3 dBm e n = 2,0, calcule a distâ
 4. Identificar o comportamento do sinal com o aumento da distância.
 5. Comparar os resultados matemáticos com as medições realizadas na bancada experimental.
 
-### 5. Atividade experimental com os ESP32
-
-Organize a bancada com os dois módulos ESP32 em um ambiente com visada direta.
-
-Posicione inicialmente os dispositivos a 1 metro de distância e, posteriormente, realize medições a 3, 5 e 10 metros.
-
-Registre os valores obtidos no monitor serial ou na plataforma ThingSpeak.
-
-| Distância real (m) | RSSI medido (dBm) | Distância estimada (m) | Erro absoluto (m) |
-|---:|---|---|---|
-| 1 | A medir | A calcular | A calcular |
-| 3 | A medir | A calcular | A calcular |
-| 5 | A medir | A calcular | A calcular |
-| 10 | A medir | A calcular | A calcular |
-
-O erro absoluto pode ser calculado pela expressão:
-$$
-\[
-E_a=|d_{\text{real}}-d_{\text{estimada}}|
-\]
-$$
-O erro percentual é dado por:
-$$
-\[
-E_{\%}=\frac{|d_{\text{real}}-d_{\text{estimada}}|}{d_{\text{real}}}\times100
-\]
-$$
-
+ 
 
 ### 5. Atividade experimental com os ESP32
 
