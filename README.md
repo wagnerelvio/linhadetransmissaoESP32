@@ -1,3 +1,4 @@
+# Repositório  - Projeto Bancada Didática com DS1820B
 # Bancada Didática com ESP32 para Análise de um Enlace Wi-Fi
 
 Projeto de uma bancada didática baseada em dois módulos **ESP32**, desenvolvida para aquisição, transmissão, armazenamento e visualização de parâmetros associados a um enlace de comunicação sem fio em **Wi-Fi 2,4 GHz**.
