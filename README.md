@@ -437,7 +437,10 @@ Portanto:
 $$
 \boxed{E_p \approx 14,33\%}
 $$
-
+Aquiiiii ?
+$$
+E_p \approx 14,33\%
+$$
 **Interpretação:** a distância estimada apresenta um erro absoluto de 0,43 metro e um erro percentual de aproximadamente 14,33% em relação à distância real.
 
 
