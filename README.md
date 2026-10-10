@@ -20,6 +20,11 @@ A bancada utiliza dois módulos ESP32 com funções distintas:
 - **Página Web:** interface para apresentação dos gráficos e indicadores do enlace.
 
 O fluxo geral de funcionamento é:
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+a
+a
+a
+
 
 ```text
 DS18B20
