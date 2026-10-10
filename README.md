@@ -435,12 +435,6 @@ $$
 Portanto:
 
 $$
-\boxed{E_p \approx 14,33\%}
-$$
-
-#### Aquiiiii ?
-
-$$
 E_p = \approx 14,33\%
 $$
 
