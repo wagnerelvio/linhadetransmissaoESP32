@@ -443,25 +443,6 @@ $$
 
 ####  Aqui 04
 
-
-#### Cálculo do erro percentual
-
-O erro percentual permite avaliar o tamanho do erro em relação à distância real.
-
-$$
-E_{\%} = \frac{E_a}{d_{\text{real}}}\times100
-$$
-
-Substituindo os valores:
-
-$$
-E_{\%} = \frac{0,43}{3,00}\times100
-$$
-
-$$
-\boxed{E_{\%} \approx 14,33\%}
-$$
-
 **Interpretação:** neste exemplo, a estimativa apresentou um erro absoluto de 0,43 m e um erro percentual de aproximadamente 14,33% em relação à distância real.
 
 **Atividade complementar:** calcule os erros absoluto e percentual para todas as distâncias utilizadas no experimento. Em seguida, analise se os erros aumentam ou diminuem com o afastamento entre os dois ESP32.
