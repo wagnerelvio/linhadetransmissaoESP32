@@ -363,17 +363,17 @@ Registre os valores obtidos no monitor serial ou na plataforma ThingSpeak.
 | 10 | A medir | A calcular | A calcular |
 
 O erro absoluto pode ser calculado pela expressão:
-
+$$
 \[
 E_a=|d_{\text{real}}-d_{\text{estimada}}|
 \]
-
+$$
 O erro percentual é dado por:
-
+$$
 \[
 E_{\%}=\frac{|d_{\text{real}}-d_{\text{estimada}}|}{d_{\text{real}}}\times100
 \]
-
+$$
 ### 6. Questões discursivas
 
 **Questão 1.** Explique por que a intensidade do sinal recebido (RSSI) tende a diminuir à medida que a distância entre os módulos ESP32 aumenta.
