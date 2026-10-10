@@ -392,3 +392,63 @@ Ao final da atividade, espera-se que os alunos consigam:
 - Identificar limitações do RSSI como indicador de distância em redes Wi-Fi.
 
 **Observação:** o modelo utilizado é uma aproximação. Para melhorar a precisão das estimativas, recomenda-se realizar medições de calibração em distâncias conhecidas e analisar estatisticamente os valores de RSSI obtidos.
+
+
+
+## Teste 2 e 3
+### 2. Modelo matemático
+
+O ESP32 Slave utiliza um modelo de propagação para estimar a distância entre os dispositivos a partir da intensidade do sinal recebido (RSSI).
+
+A distância é calculada pela expressão:
+
+$$
+d = 10^{\frac{RSSI_{1m}-RSSI}{10n}}
+$$
+
+Em que:
+
+- **d:** distância estimada, em metros;
+- **RSSI₁ₘ:** intensidade do sinal de referência a 1 metro, igual a −59,3 dBm;
+- **RSSI:** intensidade do sinal medida pelo ESP32, em dBm;
+- **n:** expoente de propagação, configurado como 2,0 para o modelo ideal de espaço livre.
+
+### 3. Exemplo numérico resolvido
+
+**Situação-problema:**
+
+Durante um experimento com a bancada didática, o ESP32 Slave registrou uma intensidade do sinal recebido de **−65 dBm**.
+
+Determine a distância estimada entre o ESP32 Slave e o ESP32 Master.
+
+**Passo 1: identificar os parâmetros**
+
+- RSSI de referência = −59,3 dBm;
+- RSSI medido = −65 dBm;
+- Expoente de propagação = 2,0.
+
+**Passo 2: substituir os valores na fórmula**
+
+$$
+d = 10^{\frac{-59,3-(-65)}{10\cdot 2}}
+$$
+
+**Passo 3: simplificar a expressão**
+
+$$
+d = 10^{\frac{5,7}{20}}
+$$
+
+$$
+d = 10^{0,285}
+$$
+
+**Passo 4: calcular a distância estimada**
+
+$$
+\boxed{d \approx 1,93\ \text{m}}
+$$
+
+**Resultado:** considerando RSSI igual a −65 dBm, a distância estimada entre os dois ESP32 é de aproximadamente **1,93 metro**.
+
+**Observação:** o valor calculado representa uma estimativa matemática. A distância real pode ser diferente devido a interferências, obstáculos, reflexões e orientação das antenas.
