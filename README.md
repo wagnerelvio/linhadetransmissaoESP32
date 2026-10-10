@@ -252,3 +252,143 @@ A bancada pode ser utilizada em aulas e experimentos sobre:
 ## 10. Descrição para artigo científico ou relatório
 
 Os códigos desenvolvidos para os microcontroladores ESP32 implementam uma arquitetura de comunicação sem fio composta por um transmissor (Slave) e um receptor (Master), utilizando a tecnologia Wi-Fi IEEE 802.11 na faixa de 2,4 GHz. O transmissor realiza a aquisição de temperatura por meio do sensor DS18B20, mede a intensidade do sinal recebido (RSSI), estima a distância entre os dispositivos e transmite pacotes identificados sequencialmente. A confiabilidade e a latência da comunicação são avaliadas por meio de mensagens de confirmação (ACK) e da medição do tempo de ida e volta (RTT). O receptor opera simultaneamente como ponto de acesso Wi-Fi e estação conectada à Internet, recebendo e processando os dados experimentais. As informações são registradas no monitor serial e encaminhadas
+
+
+
+
+
+## Exemplo prático e atividade em sala de aula: estimativa de distância pelo RSSI
+
+### 1. Objetivo da atividade
+
+Compreender como a intensidade do sinal recebido (RSSI) pode ser utilizada para estimar a distância entre dois módulos ESP32 em um enlace Wi-Fi de 2,4 GHz.
+
+A atividade permite relacionar conceitos de propagação eletromagnética, atenuação do sinal e comunicação sem fio, utilizando os dados obtidos pela bancada didática.
+
+### 2. Modelo matemático
+
+O ESP32 Slave utiliza a seguinte expressão para estimar a distância:
+
+\[
+d = 10^{\frac{RSSI_{1m}-RSSI}{10n}}
+\]
+
+**Parâmetros:**
+
+- **d:** distância estimada entre os dispositivos, em metros.
+- **RSSI₁ₘ:** intensidade de referência a 1 metro, igual a −59,3 dBm.
+- **RSSI:** intensidade do sinal medida pelo ESP32, em dBm.
+- **n:** expoente de propagação, configurado como 2,0 para o modelo ideal de espaço livre.
+
+### 3. Exemplo numérico resolvido
+
+**Situação-problema:**
+
+Durante um experimento com a bancada didática, o ESP32 Slave registrou uma intensidade de sinal de −65 dBm.
+
+Determine a distância estimada entre os dois dispositivos.
+
+**Passo 1: identificar os dados**
+
+- RSSI de referência = −59,3 dBm
+- RSSI medido = −65 dBm
+- Expoente de propagação = 2,0
+
+**Passo 2: substituir na fórmula**
+
+\[
+d=10^{\frac{-59,3-(-65)}{10(2)}}
+\]
+
+**Passo 3: simplificar**
+
+\[
+d=10^{\frac{5,7}{20}}
+\]
+
+\[
+d=10^{0,285}
+\]
+
+**Passo 4: calcular a distância**
+
+\[
+\boxed{d \approx 1,93\text{ m}}
+\]
+
+**Resultado:** a distância estimada entre o ESP32 Slave e o ESP32 Master é de aproximadamente **1,93 metro**.
+
+Esse resultado depende das condições de propagação e dos parâmetros adotados no modelo.
+
+### 4. Atividade proposta aos alunos
+
+**Situação experimental:**
+
+Durante uma aula prática de telecomunicações, os alunos deverão analisar diferentes intensidades de sinal recebidas pelo ESP32 Slave.
+
+Considerando os parâmetros RSSI₁ₘ = −59,3 dBm e n = 2,0, calcule a distância estimada para cada medição apresentada na tabela.
+
+| Medição | RSSI (dBm) | Distância estimada (m) |
+|---|---:|---|
+| 1 | −60 | A calcular |
+| 2 | −65 | A calcular |
+| 3 | −70 | A calcular |
+| 4 | −75 | A calcular |
+| 5 | −80 | A calcular |
+
+**Orientações:**
+
+1. Aplicar a equação de estimativa de distância para cada valor de RSSI.
+2. Registrar os resultados na tabela.
+3. Construir um gráfico relacionando RSSI e distância estimada.
+4. Identificar o comportamento do sinal com o aumento da distância.
+5. Comparar os resultados matemáticos com as medições realizadas na bancada experimental.
+
+### 5. Atividade experimental com os ESP32
+
+Organize a bancada com os dois módulos ESP32 em um ambiente com visada direta.
+
+Posicione inicialmente os dispositivos a 1 metro de distância e, posteriormente, realize medições a 3, 5 e 10 metros.
+
+Registre os valores obtidos no monitor serial ou na plataforma ThingSpeak.
+
+| Distância real (m) | RSSI medido (dBm) | Distância estimada (m) | Erro absoluto (m) |
+|---:|---|---|---|
+| 1 | A medir | A calcular | A calcular |
+| 3 | A medir | A calcular | A calcular |
+| 5 | A medir | A calcular | A calcular |
+| 10 | A medir | A calcular | A calcular |
+
+O erro absoluto pode ser calculado pela expressão:
+
+\[
+E_a=|d_{\text{real}}-d_{\text{estimada}}|
+\]
+
+O erro percentual é dado por:
+
+\[
+E_{\%}=\frac{|d_{\text{real}}-d_{\text{estimada}}|}{d_{\text{real}}}\times100
+\]
+
+### 6. Questões discursivas
+
+**Questão 1.** Explique por que a intensidade do sinal recebido (RSSI) tende a diminuir à medida que a distância entre os módulos ESP32 aumenta.
+
+**Questão 2.** Dois experimentos foram realizados com os dispositivos posicionados à mesma distância, mas apresentaram valores diferentes de RSSI. Quais fatores ambientais ou físicos podem justificar essa diferença?
+
+**Questão 3.** Explique por que a distância calculada a partir do RSSI não deve ser considerada uma medição precisa da separação entre os dispositivos.
+
+**Questão 4.** Como a alteração do expoente de propagação \(n\) pode influenciar os resultados da estimativa de distância?
+
+### 7. Resultados esperados
+
+Ao final da atividade, espera-se que os alunos consigam:
+
+- Aplicar o modelo matemático de estimativa de distância baseado no RSSI.
+- Relacionar a atenuação do sinal à distância entre transmissor e receptor.
+- Interpretar os dados obtidos pela bancada didática.
+- Construir gráficos e comparar resultados teóricos e experimentais.
+- Identificar limitações do RSSI como indicador de distância em redes Wi-Fi.
+
+**Observação:** o modelo utilizado é uma aproximação. Para melhorar a precisão das estimativas, recomenda-se realizar medições de calibração em distâncias conhecidas e analisar estatisticamente os valores de RSSI obtidos.
