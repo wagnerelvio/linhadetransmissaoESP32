@@ -467,3 +467,32 @@ Ao final da atividade, espera-se que os alunos consigam:
 - Identificar limitações do RSSI como indicador de distância em redes Wi-Fi.
 
 **Observação:** o modelo utilizado é uma aproximação. Para melhorar a precisão das estimativas, recomenda-se realizar medições de calibração em distâncias conhecidas e analisar estatisticamente os valores de RSSI obtidos.
+
+
+
+
+
+
+
+
+
+## Página Web do Projeto
+
+A bancada didática possui uma página web desenvolvida para apresentar os resultados experimentais do enlace Wi-Fi entre os módulos ESP32.
+
+A interface permite acompanhar os parâmetros de comunicação, como:
+
+- Intensidade do sinal recebido (RSSI);
+- Tempo de ida e volta da mensagem (RTT);
+- Confirmação de recebimento (ACK);
+- Temperatura medida pelo sensor;
+- Distância estimada entre os dispositivos;
+- Histórico dos dados armazenados no ThingSpeak.
+
+A página utiliza JavaScript e a API REST do ThingSpeak para consultar e apresentar os dados experimentais.
+
+**Acesse o site do projeto:**
+
+[Site Oficial da Bancada Didática ESP32](https://sites.google.com/view/linhatransmissao04/início)
+
+[Site Oficial da Bancada Didática ESP32](https://sites.google.com/view/linhadetransmissao08)
